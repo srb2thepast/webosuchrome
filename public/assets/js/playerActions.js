@@ -167,8 +167,10 @@ define([], function () {
         }
 
         var touchMoveHandler = function (t) {
-            playback.game.mouseX = (t[0].clientX - gfx.xoffset) / gfx.width * 512;
-            playback.game.mouseY = (t[0].clientY - gfx.yoffset) / gfx.height * 384;
+            activetouches = touch.changedTouches;
+            touch = activetouches[0]
+            playback.game.mouseX = (touch.clientX - gfx.xoffset) / gfx.width * 512;
+            playback.game.mouseY = (touch.clientY - gfx.yoffset) / gfx.height * 384;
             movehistory.unshift({
                 x: playback.game.mouseX,
                 y: playback.game.mouseY,
