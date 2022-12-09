@@ -165,6 +165,18 @@ define([], function () {
             });
             if (movehistory.length > 10) movehistory.pop();
         }
+
+        var touchMoveHandler = function (t) {
+            playback.game.mouseX = (t.clientX - gfx.xoffset) / gfx.width * 512;
+            playback.game.mouseY = (t.clientY - gfx.yoffset) / gfx.height * 384;
+            movehistory.unshift({
+                x: playback.game.mouseX,
+                y: playback.game.mouseY,
+                t: new Date().getTime()
+            });
+            if (movehistory.length > 10) movehistory.pop();
+        }
+
         var mousedownCallback = function (e) {
             mousemoveCallback(e);
             if (e.button == 0) {
@@ -225,8 +237,12 @@ define([], function () {
         // set eventlisteners
         if (!playback.autoplay) {
             playback.game.window.addEventListener("mousemove", mousemoveCallback);
+            playback.game.window.addEventListener("touchmove", touchMoveHandler, false);
+
             // mouse click handling for gameplay
             if (playback.game.allowMouseButton) {
+                playback.game.window.addEventListener("touchend", touchReleaseHandler, false);
+                playback.game.window.addEventListener("touchstart", touchMoveHandler, false);
                 playback.game.window.addEventListener("mousedown", mousedownCallback);
                 playback.game.window.addEventListener("mouseup", mouseupCallback);
             }
