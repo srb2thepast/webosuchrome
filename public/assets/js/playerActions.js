@@ -241,7 +241,7 @@ define([], function () {
 
             // mouse click handling for gameplay
             if (playback.game.allowMouseButton) {
-                playback.game.window.addEventListener("touchend", touchReleaseHandler, false);
+                // playback.game.window.addEventListener("touchend", touchReleaseHandler, false);
                 playback.game.window.addEventListener("touchstart", touchMoveHandler, false);
                 playback.game.window.addEventListener("mousedown", mousedownCallback);
                 playback.game.window.addEventListener("mouseup", mouseupCallback);
