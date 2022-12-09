@@ -237,12 +237,12 @@ define([], function () {
         // set eventlisteners
         if (!playback.autoplay) {
             playback.game.window.addEventListener("mousemove", mousemoveCallback);
-            playback.game.window.addEventListener("touchmove", touchMoveHandler, false);
+            // playback.game.window.addEventListener("touchmove", touchMoveHandler);
 
             // mouse click handling for gameplay
             if (playback.game.allowMouseButton) {
                 // playback.game.window.addEventListener("touchend", touchReleaseHandler, false);
-                playback.game.window.addEventListener("touchstart", touchMoveHandler, false);
+                // playback.game.window.addEventListener("touchstart", touchMoveHandler, false);
                 playback.game.window.addEventListener("mousedown", mousedownCallback);
                 playback.game.window.addEventListener("mouseup", mouseupCallback);
             }
