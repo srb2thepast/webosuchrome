@@ -168,7 +168,8 @@ define([], function () {
 
         var touchMoveHandler = function (t) {
             activetouches = t.changedTouches;
-            touch = activetouches[0]
+            if (activetouches.length != 1) return;
+            touch = activetouches[0];
             playback.game.mouseX = (touch.pageX - gfx.xoffset) / gfx.width * 512;
             playback.game.mouseY = (touch.pageY - gfx.yoffset) / gfx.height * 384;
             // alert(touch.pageX + " | " + touch.pageY);
