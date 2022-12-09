@@ -171,7 +171,7 @@ define([], function () {
             touch = activetouches[0]
             playback.game.mouseX = (touch.pageX - gfx.xoffset) / gfx.width * 512;
             playback.game.mouseY = (touch.pageY - gfx.yoffset) / gfx.height * 384;
-            console.log(touch.pageX + " | " + touch.pageY);
+            alert(touch.pageX + " | " + touch.pageY);
             movehistory.unshift({
                 x: playback.game.mouseX,
                 y: playback.game.mouseY,
