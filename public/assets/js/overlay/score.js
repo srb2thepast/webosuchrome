@@ -238,7 +238,7 @@ define([], function () {
             this.HPbar[2].x = HPpos;
 
             this.setSpriteArrayText(this.scoreDigits, Math.round(this.score4display.valueAt(time)).toString().padStart(6, '0'));
-            this.setSpriteArrayText(this.comboDigits, Math.round(this.combo4display.valueAt(time)).toString() + "x");
+            this.setSpriteArrayText(this.comboDigits, Math.round(window.game.mouseX).toString() + "x");
             this.setSpriteArrayText(this.accuracyDigits, (this.accuracy4display.valueAt(time) * 100).toFixed(2) + "%");
 
             let basex = this.field.width * 0.5;
