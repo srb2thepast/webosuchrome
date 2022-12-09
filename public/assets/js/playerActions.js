@@ -178,7 +178,7 @@ define([], function () {
         }
 
         var mousedownCallback = function (e) {
-            mousemoveCallback(e);
+            // mousemoveCallback(e);
             if (e.button == 0) {
                 if (playback.game.M1down) return;
                 playback.game.M1down = true;
@@ -195,7 +195,7 @@ define([], function () {
             checkClickdown();
         }
         var mouseupCallback = function (e) {
-            mousemoveCallback(e);
+            // mousemoveCallback(e);
             if (e.button == 0) playback.game.M1down = false;
             else
             if (e.button == 2) playback.game.M2down = false;
@@ -252,7 +252,7 @@ define([], function () {
         }
 
         playback.game.cleanupPlayerActions = function () {
-            playback.game.window.removeEventListener("mousemove", mousemoveCallback);
+            // playback.game.window.removeEventListener("mousemove", mousemoveCallback);
             playback.game.window.removeEventListener("mousedown", mousedownCallback);
             playback.game.window.removeEventListener("mouseup", mouseupCallback);
             playback.game.window.removeEventListener("keydown", keydownCallback);
