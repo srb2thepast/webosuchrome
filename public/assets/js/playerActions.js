@@ -236,7 +236,7 @@ define([], function () {
 
         // set eventlisteners
         if (!playback.autoplay) {
-            playback.game.window.addEventListener("mousemove", mousemoveCallback);
+            // playback.game.window.addEventListener("mousemove", mousemoveCallback);
             playback.game.window.addEventListener("touchmove", touchMoveHandler);
 
             // mouse click handling for gameplay
