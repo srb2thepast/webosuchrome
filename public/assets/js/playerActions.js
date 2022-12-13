@@ -226,6 +226,13 @@ define([], function () {
                 playback.game.M1down || playback.game.M2down;
             checkClickdown();
         }
+
+        var touchStartHandler = function(e) {
+            touchMoveHandler(e)
+            playback.game.M1down = true;
+
+        }
+
         var keyupCallback = function (e) {
             if (e.keyCode == playback.game.K1keycode) playback.game.K1down = false;
             else
@@ -246,7 +253,8 @@ define([], function () {
             // mouse click handling for gameplay
             if (playback.game.allowMouseButton) {
                 // playback.game.window.addEventListener("touchend", touchReleaseHandler, false);
-                 playback.game.window.addEventListener("touchstart", touchMoveHandler, false);
+                 playback.game.window.addEventListener("touchstart", touchStartHandler, false);
+                 
                 playback.game.window.addEventListener("mousedown", mousedownCallback);
                 playback.game.window.addEventListener("mouseup", mouseupCallback);
             }
