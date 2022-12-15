@@ -253,7 +253,7 @@ define([], function () {
 
         // set eventlisteners
         if (!playback.autoplay) {
-            playback.game.window.addEventListener("mousemove", mousemoveCallback);
+            // playback.game.window.addEventListener("mousemove", mousemoveCallback);
             playback.game.window.addEventListener("touchmove", touchMoveHandler);
 
             // mouse click handling for gameplay
@@ -261,8 +261,8 @@ define([], function () {
                  playback.game.window.addEventListener("touchend", touchEndHandler, false);
                  playback.game.window.addEventListener("touchstart", touchStartHandler, false);
                  
-                playback.game.window.addEventListener("mousedown", mousedownCallback);
-                playback.game.window.addEventListener("mouseup", mouseupCallback);
+                // playback.game.window.addEventListener("mousedown", mousedownCallback);
+                // playback.game.window.addEventListener("mouseup", mouseupCallback);
             }
             // keyboard click handling for gameplay
             playback.game.window.addEventListener("keydown", keydownCallback);
