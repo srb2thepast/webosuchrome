@@ -180,6 +180,7 @@ define([], function () {
                 t: new Date().getTime()
             });
             if (movehistory.length > 10) movehistory.pop();
+            alert(playback.game.M1down);
         }
 
         var mousedownCallback = function (e) {
