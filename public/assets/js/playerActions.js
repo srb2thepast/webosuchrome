@@ -231,12 +231,16 @@ define([], function () {
         var touchStartHandler = function(e) {
             touchMoveHandler(e)
             playback.game.M1down = true;
+            playback.game.down = playback.game.K1down || playback.game.K2down ||
+                playback.game.M1down || playback.game.M2down;
 
         }
 
         var touchEndHandler = function(e) {
             touchMoveHandler(e)
             playback.game.M1down = false;
+            playback.game.down = playback.game.K1down || playback.game.K2down ||
+                playback.game.M1down || playback.game.M2down;
 
         }
 
@@ -248,6 +252,7 @@ define([], function () {
                 return;
             e.preventDefault();
             e.stopPropagation();
+            alert(playback.game.M1down);
             playback.game.down = playback.game.K1down || playback.game.K2down ||
                 playback.game.M1down || playback.game.M2down;
         }
